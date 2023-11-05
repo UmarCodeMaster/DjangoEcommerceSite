@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+    .register-container {
+    max-width: 400px;
+    margin: 50px auto 0;
+    padding: 30px;
+    background-color:#f7f6f6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.register-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.register-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+.register-form > ul, .helptext {
+    display: none;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.register-button {
+    padding: 12px 20px;
+    background-color: #18191b;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #4c75f2;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #3958c5;
+}
+
+</style>
+
+<div class="register-container">
+    <h2 class="register-header">Register</h2>
+    <form method="post" class="register-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="register-button">Register</button>
+    </form>
+    <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    {% if form.errors %}
+    <div class="error-message">
+        <ul>
+            {% for field in form %}
+            {% for error in field.errors %}
+            <li>{{ field.label }}: {{ error }}</li>
+            {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

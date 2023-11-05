@@ -1,0 +1,29 @@
+
+/* styles.css */
+.review {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.review p {
+    margin: 5px 0;
+}
+
+.rating {
+    font-weight: bold;
+    color: #f39c12; /* Change this to your desired color for ratings */
+}
+
+.comment {
+    font-style: italic;
+    color: #333; /* Change this to your desired color for comments */
+}
+
+.username {
+    color: #2980b9; /* Change this to your desired color for usernames */
+}
+
+.date {
+    color: #888; /* Change this to your desired color for dates */
+}

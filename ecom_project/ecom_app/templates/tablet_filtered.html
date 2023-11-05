@@ -1,0 +1,26 @@
+<div id="tablets_list" class="category-item list">
+    {% for st in tablet|slice:"0:6" %}
+    <!-- BEGIN item-row -->
+    <div class="item-row">
+        <!-- BEGIN item -->
+        <div class="item item-thumbnail">
+            <a id="{{st.id}}" href="/product/{{st.id}}/" class="item-image">
+            {% comment %} <a href="product_detail.html" class="item-image"> {% endcomment %}
+                <img src="{{st.image.url}}" alt="" />
+                <div class="discount">{{st.discount_offer}}OFF</div>
+            </a>
+            <div class="item-info">
+                <h4 class="item-title">
+                    <!-- Static URL -->
+                    <a id="{{st.id}}" href="/product/{{st.id}}">{{st.name}}<br />{{st.storage}}GB</a>
+                </h4>
+                <p class="item-desc">{{st.description}}</p>
+                <div class="item-price">${{st.price}}</div>
+                <div class="item-discount-price">${{st.discount_price}}</div>
+            </div>
+        </div>
+        <!-- END item -->
+    </div>
+    {% endfor %}
+    <!-- END item-row -->
+</div>
