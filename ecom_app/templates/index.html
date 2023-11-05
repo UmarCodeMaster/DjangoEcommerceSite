@@ -241,7 +241,7 @@
                             {% for comp in company %}
                             <li><a onclick="f({{comp.id}})" href="javascript:void(0)">{{comp.Company_name}}</a></li>
                             {% endfor %}
-                            <li><a href="{% url 'home' %}">All Brands</a></li>
+                            <li><a onclick="f('')" href="javascript:void(0)">All Brands</a></li>
                         </ul>
                     </div>
                     <!-- END category-sidebar -->
@@ -318,10 +318,11 @@
                     <div class="category-sidebar">
                         <ul class="category-list">
                             <li class="list-header">Top Categories</li>
+                            <li class="list-header">Top Categories</li>
                             {% for comp in company %}
-                            <li><a onclick="f({{comp.id}})" href="javascript:void(0)">{{comp.Company_name}}</a></li>
+                            <li><a onclick="j({{comp.id}})" href="javascript:void(0)">{{comp.Company_name}}</a></li>
                             {% endfor %}
-                            <li><a href="{% url 'home' %}">All Brands</a></li>
+                            <li><a onclick="j('')" href="javascript:void(0)">All Brands</a></li>
                         </ul>
                     </div>
                     <!-- END category-sidebar -->

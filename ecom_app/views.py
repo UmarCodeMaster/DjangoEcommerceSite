@@ -110,7 +110,7 @@ class Mobiles(ListView):
     def get(self, request, *args, **kwargs):
         mobile = request.GET.get('mobile', None)
         mobiles = Product.objects.filter(category=1)
-        if mobile is not None:
+        if mobile:
             mobiles = mobiles.filter(category=1, company=mobile)
         context = {
             'mobile': mobiles}
@@ -124,7 +124,7 @@ class Tablets(ListView):
     def get(self, request, *args, **kwargs):
         tablet = request.GET.get('tablet', None)
         tablets = Product.objects.filter(category=2)
-        if tablet is not None:
+        if tablet:
             tablets = tablets.filter(category=2, company=tablet)
         context = {
             'tablet': tablets}
